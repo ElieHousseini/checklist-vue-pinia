@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: #f2f2f2;
   color: #444;
@@ -21,7 +27,13 @@ header {
 header img {
   max-width: 60px;
   transform: rotate(-10deg);
+  transition: transform 0.3s ease;
 }
+
+header img:hover{
+  transform: scale(1.1);
+}
+
 header h1 {
   margin: 0;
   font-size: 2em;
@@ -29,6 +41,11 @@ header h1 {
   margin-left: 15px;
   color: #777;
   transform: rotate(2deg);
+  transition: transform 0.3s ease;
+}
+
+header h1:hover {
+  transform: scale(1.1);
 }
 
 /* task list */
@@ -46,6 +63,13 @@ header h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.task:hover{
+  background-color: #ffd859;
+  color: white;
+  transform: scale(1.1);
 }
 
 .task h3, .task .icons {
@@ -96,6 +120,7 @@ form{
   grid-template-columns: 3fr 1fr;
   gap: 10px;
 }
+
 form button{
   background: #ffd859;
   border: 0;
@@ -105,6 +130,11 @@ form button{
   cursor: pointer;
   font-size: 1em;
 }
+
+form button:hover{
+  background-color: #ffe9a0;
+}
+
 form input{
   border: 0;
   padding: 10px;
@@ -125,4 +155,12 @@ form input{
 
 .icon-trash{
   margin-right: 10px;
+}
+
+.icon-trash:hover{
+  color: lightblue
+}
+
+.icon-heart:hover{
+  color: lightcoral
 }
