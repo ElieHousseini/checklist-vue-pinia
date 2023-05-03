@@ -100,7 +100,7 @@ header h1:hover {
   color: var(--color-heart-icon)
 }
 
-.allTasksBtn .active {
+.allTasksBtn.active {
   background-color:lightblue !important;
   color: black
 }
@@ -109,7 +109,7 @@ header h1:hover {
   background-color: lightblue;
 }
 
-.favTasksBtn .active {
+.favTasksBtn.active {
   background-color: var(--color-heart-icon) !important;
   color: white
 }
