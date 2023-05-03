@@ -8,9 +8,15 @@ Vue + Pinia + Vite + Yarn
 
 ## How to start the Project
 
+Terminal 1:
 ```sh
 yarn
 yarn global add json-server
+json-server -w ./data/db.json
+```
+
+Terminal 2:
+```sh
 yarn run dev
 ```
 
