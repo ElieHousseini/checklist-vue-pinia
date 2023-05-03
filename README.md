@@ -2,7 +2,7 @@
 
 It's a simple checklist to demo the usable of pinia state management library in Vue.js
 
-## technologies
+### Technologies
 
 Vue + Pinia + Vite + Yarn
 
