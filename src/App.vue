@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import './assets/main.css'
+import './style.css'
 import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useTaskStore } from './stores/TaskStore'
