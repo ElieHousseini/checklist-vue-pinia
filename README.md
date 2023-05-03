@@ -4,7 +4,7 @@ It's a simple checklist to demo the usable of pinia state management library in 
 
 ## technologies
 
-Vue + Pinia + Vite
+Vue + Pinia + Vite + Yarn
 
 ## Recommended IDE Setup
 

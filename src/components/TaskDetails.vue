@@ -22,9 +22,3 @@ import { useTaskStore } from '../stores/TaskStore';
             }
     }
 </script>
-<style scoped>
-.icon-trash{
-  /* Add any desired styles for the icons */
-  margin-right: 10px;
-}
-</style>

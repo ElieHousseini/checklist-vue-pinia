@@ -55,8 +55,6 @@
             taskStore.getTasks()
 
             const filter = ref('all')
-            
-            console.log('taskStore', taskStore.tasks)
 
             return {
                 taskStore, filter, tasks, isLoading, favs, totalCount, favCount 
@@ -64,7 +62,3 @@
         }
     }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
