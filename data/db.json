@@ -1,0 +1,24 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "buy some milk",
+      "isFav": true
+    },
+    {
+      "id": 3,
+      "title": "mow the law",
+      "isFav": true
+    },
+    {
+      "id": 4,
+      "title": "become an eldern lord",
+      "isFav": false
+    },
+    {
+      "id": 5,
+      "title": "eat some pinapples",
+      "isFav": false
+    }
+  ]
+}
