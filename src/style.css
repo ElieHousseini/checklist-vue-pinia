@@ -73,7 +73,6 @@ header h1:hover {
   align-items: center;
   transition: transform 0.3s ease;
   font-size: 1.4em;
-  margin-left: 6px;
   cursor: pointer;
   color: #bbb
 }
@@ -90,6 +89,11 @@ header h1:hover {
 
 .task .icons{
   text-align: right;
+  width: 10%;
+}
+
+.task h3 {
+  width: 85%;
 }
 
 .isFav{
@@ -136,6 +140,7 @@ header h1:hover {
 }
 
 form button{
+  width: 20%;
   background: #ffd859;
   border: 0;
   padding: 10px;
@@ -151,6 +156,7 @@ form button:hover{
 
 form input{
   border: 0;
+  width: 80%;
   padding: 10px;
   border-radius: 6px;
   color: #555;
@@ -171,10 +177,6 @@ form input:hover{
   margin: 30px auto;
 }
 
-.icon-trash{
-  margin-right: 10px;
-}
-
 .icon-trash:hover{
   color: lightblue
 }
@@ -188,4 +190,10 @@ form input:hover{
     width: 50%;
     margin: auto;
   }
+}
+
+@media (min-width: 992px) {
+  .icon-trash{
+    margin-right: 10px;
+  }  
 }
