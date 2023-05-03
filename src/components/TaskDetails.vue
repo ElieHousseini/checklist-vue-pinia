@@ -3,7 +3,7 @@
         <h3>{{ task.title }}</h3>
         <div class="icons">
             <font-awesome-icon :icon="['fas', 'trash-alt']" @click="taskStore.deleteTask(task.id)" class="icon-trash" />
-            <font-awesome-icon :class="{active: task.isFav}" :icon="['fas', 'heart']" @click="taskStore.toggleFav(task.id)" class="icon-heart" />
+            <font-awesome-icon :class="{isFav: task.isFav}" :icon="['fas', 'heart']" @click="taskStore.toggleFav(task.id)" class="icon-heart" />
         </div>
     </div>
 </template>

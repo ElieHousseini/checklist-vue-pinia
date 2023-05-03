@@ -4,30 +4,36 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: var(--font-poppins);
+}
+
+:root{
+  --color-heart-icon: #ff005d;
+  --color-grey: #f2f2f2; 
+  --color-dark-grey: #777;
+  --color-light-grey: #e7e7e7; 
+  --color-white: #fff;
+
+  --font-poppins: "Poppins" 
 }
 
 body {
-  background: #f2f2f2;
-  color: #444;
-  margin: 0;
-}
-body * {
-  font-family: "Poppins";
+  background: var(--color-grey);
 }
 
 .layout{
   margin: 0 1rem 0 1rem;
 }
 
-/* header */
 header {
   text-align: center;
-  background: #e7e7e7;
+  background: var(--color-light-grey);
   padding-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 header img {
   max-width: 60px;
   transform: rotate(-10deg);
@@ -43,7 +49,7 @@ header h1 {
   font-size: 2em;
   padding-top: 25px;
   margin-left: 15px;
-  color: #777;
+  color: var(--color-dark-grey);
   transform: rotate(2deg);
   transition: transform 0.3s ease;
 }
@@ -52,15 +58,13 @@ header h1:hover {
   transform: scale(1.1);
 }
 
-/* task list */
 .task-list{
-  /* max-width: 640px; */
   margin: 20px auto;
 }
 
 .task{
   padding: 6px 20px;
-  background: #fff;
+  background: var(--color-white);
   margin-top: 20px;
   border-radius: 4px;
   box-shadow: 2px 4px 6px rbga(0, 0, 0, 0,05);
@@ -68,6 +72,10 @@ header h1:hover {
   justify-content: space-between;
   align-items: center;
   transition: transform 0.3s ease;
+  font-size: 1.4em;
+  margin-left: 6px;
+  cursor: pointer;
+  color: #bbb
 }
 
 .task:hover{
@@ -84,18 +92,11 @@ header h1:hover {
   text-align: right;
 }
 
-.task{
-  font-size: 1.4em;
-  margin-left: 6px;
-  cursor: pointer;
-  color: #bbb
+.isFav{
+  color: var(--color-heart-icon)
 }
 
-.active{
-  color: #ff005d
-}
-
-.allTasksButtonActive {
+.allTasksBtn .active {
   background-color:lightblue !important;
   color: black
 }
@@ -104,8 +105,8 @@ header h1:hover {
   background-color: lightblue;
 }
 
-.favTasksButtonActive {
-  background-color: #ff005d !important;
+.favTasksBtn .active {
+  background-color: var(--color-heart-icon) !important;
   color: white
 }
 
@@ -114,7 +115,6 @@ header h1:hover {
 }
 
 .filter{
-  /* width: 640px; */
   margin: 10px auto;
   text-align: right;
 }
@@ -122,7 +122,7 @@ header h1:hover {
 .filter button{
   display: inline-block;
   margin-left: 10px;
-  background: #ffff;
+  background: var(--color-white);
   border: 0;
   border-radius: 4px;
   padding: 4px 8px;
@@ -131,8 +131,8 @@ header h1:hover {
 }
 
 .new-task-form{
-  background: #e7e7e7;
-  padding: 20px 0;
+  text-align: center;
+  margin: 2rem 0 2rem 0;
 }
 
 form button{
@@ -163,7 +163,6 @@ form input:hover{
 }
 
 .loading{
-  /* max-width: 640px; */
   border: 1px solid #ffd859;
   background: #ffe9a0;
   color: #3a3a3a;

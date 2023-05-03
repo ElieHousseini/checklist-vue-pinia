@@ -5,17 +5,17 @@
             <h1>Pinia Tasks</h1>
         </header>
 
-        <!-- new task form -->
-        <!-- <div class="new-task-form">
-            <TaskForm />
-        </div> -->
-
         <div class="layout">
+            <!-- new task form -->
+            <div class="new-task-form">
+                <TaskForm />
+            </div>
+
             <!-- filter -->
             <nav class="filter">
-                <button class='allTasksBtn' :class="{ 'allTasksButtonActive': filter === 'all' }"
+                <button class='allTasksBtn' :class="{ 'active': filter === 'all' }"
                     @click="handleAllTasksClick">All Tasks</button>
-                <button class="favTasksBtn" :class="{ 'favTasksButtonActive': filter === 'fav' }"
+                <button class="favTasksBtn" :class="{ 'active': filter === 'fav' }"
                     @click="handleFavsClick">Fav Tasks</button>
             </nav>
 
