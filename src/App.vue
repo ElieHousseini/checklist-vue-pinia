@@ -6,59 +6,73 @@
         </header>
 
         <!-- new task form -->
-        <div class="new-task-form">
+        <!-- <div class="new-task-form">
             <TaskForm />
+        </div> -->
+
+        <div class="layout">
+            <!-- filter -->
+            <nav class="filter">
+                <button class='allTasksBtn' :class="{ 'allTasksButtonActive': filter === 'all' }"
+                    @click="handleAllTasksClick">All Tasks</button>
+                <button class="favTasksBtn" :class="{ 'favTasksButtonActive': filter === 'fav' }"
+                    @click="handleFavsClick">Fav Tasks</button>
+            </nav>
+
+            <div class="loading" v-if="isLoading">Loading Tasks...</div>
+            <!-- task list -->
+            <div class="task-list" v-if="filter === 'all' && !isLoading">
+                <p>You have {{ totalCount }} tasks left to do</p>
+                <div v-for="task in tasks">
+                    <TaskDetails :task="task" />
+                </div>
+            </div>
+            <div class="task-list" v-if="filter === 'fav' && !isLoading">
+                <p>You have {{ favCount }} favs left to do</p>
+                <div v-for="task in favs">
+                    <TaskDetails :task="task" />
+                </div>
+            </div>
+
         </div>
 
-        <!-- filter -->
-        <nav class="filter">
-            <button @click="filter = 'all'">All Tasks</button>
-            <button @click="filter = 'fav'">Fav Tasks</button>
-        </nav>
 
-        <div class="loading" v-if="isLoading">Loading Tasks...</div>
-        <!-- task list -->
-        <div class="task-list" v-if="filter === 'all' && !isLoading">
-            <p>You have {{ totalCount }} tasks left to do</p>
-            <div v-for="task in tasks">
-                <TaskDetails :task="task" />
-            </div>
-        </div>
-        <div class="task-list" v-if="filter === 'fav' && !isLoading">
-            <p>You have {{ favCount }} favs left to do</p>
-            <div v-for="task in favs">
-                <TaskDetails :task="task" />
-            </div>
-        </div>
         <!-- <button @click="taskStore.$reset">reset</button> -->
     </main>
 </template>
 
 <script>
-    import './assets/main.css'
-    import { ref } from 'vue'
-    import { storeToRefs } from 'pinia'
-    import { useTaskStore } from './stores/TaskStore'
-    import TaskDetails from './components/TaskDetails.vue'
-    import TaskForm from './components/TaskForm.vue'
+import './assets/main.css'
+import { ref } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useTaskStore } from './stores/TaskStore'
+import TaskDetails from './components/TaskDetails.vue'
+import TaskForm from './components/TaskForm.vue'
 
-    export default {
+export default {
 
-        components: {TaskDetails, TaskForm},
-        
-        setup(){
-            const taskStore = useTaskStore()
+    components: { TaskDetails, TaskForm },
 
-            const { tasks, isLoading, favs, totalCount, favCount } = storeToRefs(taskStore)
+    setup() {
+        const taskStore = useTaskStore()
 
-            // fetch tasks
-            taskStore.getTasks()
+        const { tasks, isLoading, favs, totalCount, favCount } = storeToRefs(taskStore)
 
-            const filter = ref('all')
+        // fetch tasks
+        taskStore.getTasks()
 
-            return {
-                taskStore, filter, tasks, isLoading, favs, totalCount, favCount 
-            }
+        const filter = ref('all')
+
+        const handleAllTasksClick = () => {
+            if (filter.value !== 'all') filter.value = 'all'
+        }
+        const handleFavsClick = () => {
+            if (filter.value !== 'fav') filter.value = 'fav'
+        }
+
+        return {
+            taskStore, filter, tasks, isLoading, favs, totalCount, favCount, handleAllTasksClick, handleFavsClick
         }
     }
+}
 </script>
